@@ -1,0 +1,58 @@
+{% extends "home.html"%}
+
+
+{%block content %}
+
+<div class="card text-center">
+    <div class="card-header">
+        <strong>original Entered Review: </strong>
+    </div>
+    <div class="card-body">
+        <p id="new" class="card-text">
+            {{rawtext}}
+        </p>
+    </div>
+</div>
+
+
+<br><br>
+
+
+<div class="card text-center">
+    <div class="card-header">
+        <strong>Predicted Medical Condition: </strong>
+    </div>
+    <div class="card-body">
+        <p id="new" class="card-text">
+            {{result}}
+        </p>
+    </div>
+</div>
+
+<br><br>
+
+
+
+<div class="card text-center">
+    <div class="card-header">
+        <strong>Top 3 drugs: </strong>
+    </div>
+    <div class="card-body">
+        <table align="center">
+            <tr>
+                {% for top_drug in top_drugs %}
+                <th>
+
+                    <p class="rount1">{{top_drug}}</p>
+
+                </th>
+
+                {%endfor%}
+
+            </tr>
+        </table>
+        
+    </div>
+</div>
+
+{% endblock %}
